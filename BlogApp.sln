@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.BLL", "BlogApp.BLL\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.DAL", "BlogApp.DAL\BlogApp.DAL.csproj", "{87318BD8-C6BC-4D78-AE6A-49A40A739C38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogApp.Ui", "BlogApp.Ui\BlogApp.Ui.csproj", "{5BE63639-9191-486E-ACBF-71B771077C1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.Ui", "BlogApp.Ui\BlogApp.Ui.csproj", "{5BE63639-9191-486E-ACBF-71B771077C1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

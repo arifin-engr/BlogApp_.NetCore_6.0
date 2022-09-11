@@ -21,9 +21,4 @@
     <ProjectReference Include="..\BlogApp.Model\BlogApp.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contacts\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

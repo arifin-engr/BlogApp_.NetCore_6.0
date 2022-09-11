@@ -1,4 +1,4 @@
-﻿using BlogApp.DAL.Data;
+﻿using BlogApp.DAL.Contacts;
 using BlogApp.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogApp.DAL
+namespace BlogApp.DAL.Data
 {
     public class DbInitializer : IDbInitializer
     {
@@ -42,7 +42,7 @@ namespace BlogApp.DAL
             _password.Trim();
             _email.Trim();
 
-          
+
             var FindUser = _db.Users.FirstOrDefaultAsync(u => u.UserName == _userName).Result;
 
 
@@ -62,7 +62,7 @@ namespace BlogApp.DAL
                 if (result.Succeeded)
                 {
                     AppUser user = await _db.Users.FirstOrDefaultAsync(u => u.UserName == "sa");
-                   
+
 
                     // Adding Manager role 
                     IdentityResult DefultRoleresult = _userManager.AddToRoleAsync(user, role).Result;

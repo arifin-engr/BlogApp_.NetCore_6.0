@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogApp.DAL
+namespace BlogApp.DAL.Contacts
 {
     public interface IDbInitializer
     {
-         void seed();
+        void seed();
     }
 }

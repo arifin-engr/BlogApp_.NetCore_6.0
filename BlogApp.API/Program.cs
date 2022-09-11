@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Web;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using BlogApp.DAL.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

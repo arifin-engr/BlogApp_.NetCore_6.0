@@ -9,6 +9,7 @@ namespace BlogApp.Model
 {
     public class BlogCategory
     {
+        [Key]
         public int BlogCategoryId { get; set; }
         [Required]
         [Display(Name ="Title")]

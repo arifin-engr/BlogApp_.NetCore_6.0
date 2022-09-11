@@ -10,6 +10,7 @@ namespace BlogApp.Model
 {
     public class BlogPost
     {
+        [Key]
         public int PostId { get; set; }
         [Required]
         public string Title { get; set; }
@@ -28,6 +29,7 @@ namespace BlogApp.Model
     }
    public class BlogImage
     {
+        [Key]
         public int BlogImageId { get; set; }
         public string BlogImageTitle { get; set; }
     }
@@ -35,7 +37,7 @@ namespace BlogApp.Model
     {
         [ForeignKey("BlogPost")]
         public int PostId { get; set; }
-        [ForeignKey("BlogPost")]
+        [ForeignKey("BlogImage")]
         public int BlogImageId { get; set; }
         public BlogPost BlogPost { get; set; }
         public BlogImage BlogImage { get; set; }

@@ -26,7 +26,7 @@ namespace BlogApp.Model
     public class AppUserImageDetail
     {
         [ForeignKey("AppUser")]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public  AppUser AppUser { get; set; }
         [ForeignKey("AppUserImage")]
         public int UserImageId { get; set; }

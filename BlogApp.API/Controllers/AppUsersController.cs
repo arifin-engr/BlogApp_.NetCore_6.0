@@ -7,5 +7,6 @@ namespace BlogApp.API.Controllers
     [ApiController]
     public class AppUsersController : ControllerBase
     {
+
     }
 }

@@ -10,7 +10,7 @@ namespace BlogApp.DAL.Repositories
 {
     public class BlogCategoryRepository : IRepository<BlogCategory>
     {
-        public Task<BlogCategory> Create(BlogCategory _object)
+        public Task<bool> Create(BlogCategory _object)
         {
             throw new NotImplementedException();
         }
@@ -26,6 +26,11 @@ namespace BlogApp.DAL.Repositories
         }
 
         public BlogCategory GetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetByName(string name)
         {
             throw new NotImplementedException();
         }

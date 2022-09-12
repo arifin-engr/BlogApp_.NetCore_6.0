@@ -10,7 +10,7 @@ namespace BlogApp.DAL.Repositories
 {
     internal class BlogPostRepository : IRepository<BlogPost>
     {
-        public Task<BlogPost> Create(BlogPost _object)
+        public Task<bool> Create(BlogPost _object)
         {
             throw new NotImplementedException();
         }
@@ -26,6 +26,11 @@ namespace BlogApp.DAL.Repositories
         }
 
         public BlogPost GetById(int Id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetByName(string name)
         {
             throw new NotImplementedException();
         }

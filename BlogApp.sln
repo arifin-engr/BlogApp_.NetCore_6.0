@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.BLL", "BlogApp.BLL\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.DAL", "BlogApp.DAL\BlogApp.DAL.csproj", "{87318BD8-C6BC-4D78-AE6A-49A40A739C38}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogApp.Ui", "BlogApp.Ui\BlogApp.Ui.csproj", "{5BE63639-9191-486E-ACBF-71B771077C1F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{87318BD8-C6BC-4D78-AE6A-49A40A739C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87318BD8-C6BC-4D78-AE6A-49A40A739C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87318BD8-C6BC-4D78-AE6A-49A40A739C38}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5BE63639-9191-486E-ACBF-71B771077C1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5BE63639-9191-486E-ACBF-71B771077C1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5BE63639-9191-486E-ACBF-71B771077C1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5BE63639-9191-486E-ACBF-71B771077C1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

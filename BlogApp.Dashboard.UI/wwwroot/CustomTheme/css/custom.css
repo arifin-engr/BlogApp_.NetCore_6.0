@@ -1,0 +1,22 @@
+.logo-icon img{
+    width: 42px;
+    height: 40px;
+}
+.navbar-bg
+{
+    background: #051A3D;
+}
+.logo-text-area
+{
+
+}
+.logo-text-area h4 {
+    margin: 0;
+    color: red;
+    font-weight: 900;
+    font-style: italic;
+}
+.logo-text-area h4 span
+{
+color: #fff;
+}

@@ -10,12 +10,12 @@ namespace BlogApp.Model
 {
     public class AppUser:IdentityUser
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
         public Gender Gender { get; set; }=Gender.Male;
-        public string Country { get; set; }
-        public int UserImageId { get; set; }
-        public AppUserImage AppUserImage { get; set; }
+        public string? Country { get; set; }
+        public int? UserImageId { get; set; }
+        public AppUserImage? AppUserImage { get; set; }
     }
     public class AppUserImage
     {

@@ -30,7 +30,7 @@ namespace BlogApp.API.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("AppUserImageUserImageId")
+                    b.Property<int?>("AppUserImageUserImageId")
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -38,7 +38,6 @@ namespace BlogApp.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -49,14 +48,12 @@ namespace BlogApp.API.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
@@ -88,7 +85,7 @@ namespace BlogApp.API.Migrations
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
-                    b.Property<int>("UserImageId")
+                    b.Property<int?>("UserImageId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserName")
@@ -370,8 +367,7 @@ namespace BlogApp.API.Migrations
                     b.HasOne("BlogApp.Model.AppUserImage", "AppUserImage")
                         .WithMany()
                         .HasForeignKey("AppUserImageUserImageId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("AppUserImage");
                 });

@@ -38,6 +38,7 @@ namespace BlogApp.DAL.Data
             const string _userName = "sa";
             const string _password = "555555";
             const string _email = "admin@gmail.com";
+            const string _country = "Bangladesh";
             _userName.Trim();
             _password.Trim();
             _email.Trim();
@@ -55,17 +56,18 @@ namespace BlogApp.DAL.Data
                 appUser.UserName = _userName;
                 appUser.Email = _email;
                 appUser.EmailConfirmed = false;
+                appUser.Country = _country;
 
                 //_userManager = new UserManager<AppUser>();
                 IdentityResult result = _userManager.CreateAsync(appUser, _password).Result;
 
                 if (result.Succeeded)
                 {
-                    AppUser user = await _db.Users.FirstOrDefaultAsync(u => u.UserName == "sa");
+                   // AppUser user = await _db.Users.FirstOrDefaultAsync(u => u.UserName == _userName);
 
 
                     // Adding Manager role 
-                    IdentityResult DefultRoleresult = _userManager.AddToRoleAsync(user, role).Result;
+                    IdentityResult DefultRoleresult = _userManager.AddToRoleAsync(appUser, role).Result;
 
                     if (DefultRoleresult.Succeeded)
                     {

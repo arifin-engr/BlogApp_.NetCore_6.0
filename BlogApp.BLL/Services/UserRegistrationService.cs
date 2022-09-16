@@ -1,7 +1,9 @@
-﻿using BlogApp.DAL.Repositories;
+﻿using BlogApp.BLL.interfaces;
+using BlogApp.DAL.Repositories;
 using BlogApp.Model;
 using BlogApp.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,15 @@ namespace BlogApp.BLL.Services
 {
     public class UserRegistrationService : IUserRegistrationService<UserRegisterModel>
     {
-        UserRegistrationRepository repository;
+        UserRegistrationRepository repository; //new UserRegistrationRepository();
+        public UserRegistrationService(UserRegistrationRepository repository)
+        {
+            this.repository = repository;
+
+           // this.repository= new UserRegistrationRepository(new UserManager<AppUser>,RoleManager<IdentityRole>);
+        }
+        
+
         public async Task<bool> CreateUser(UserRegisterModel model)
         {
             
@@ -40,6 +50,7 @@ namespace BlogApp.BLL.Services
 
         public bool GetByName(string name)
         {
+
             if (name != null)
             {
                 var userExists = repository.GetByName(name);

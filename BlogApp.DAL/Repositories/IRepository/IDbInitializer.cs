@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogApp.DAL.Contacts
+namespace BlogApp.DAL.Repositories.IRepository
 {
     public interface IDbInitializer
     {

@@ -16,6 +16,6 @@ namespace BlogApp.Model
         public string CategoryTitle { get; set; }
         [Display(Name = "Description")]
         public string CategoryDescription { get; set; }
-        public List<BlogPost> BlogPost { get; set; }
+       
     }
 }

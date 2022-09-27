@@ -1,4 +1,6 @@
-﻿using BlogApp.DAL.Contacts;
+﻿
+using BlogApp.DAL.Data;
+using BlogApp.DAL.Repositories.IRepository;
 using BlogApp.Model;
 using System;
 using System.Collections.Generic;
@@ -8,36 +10,16 @@ using System.Threading.Tasks;
 
 namespace BlogApp.DAL.Repositories
 {
-    public class BlogCategoryRepository : IRepository<BlogCategory>
+    public class BlogCategoryRepository : Repository<BlogCategory>, IBlogCategoryRepository
     {
-        public Task<bool> Create(BlogCategory _object)
+        private readonly ApplicationDbContext _db;
+        public BlogCategoryRepository(ApplicationDbContext db):base(db)
         {
-            throw new NotImplementedException();
+            _db =db;
         }
-
-        public void Delete(BlogCategory _object)
+        public void Update(BlogCategory obj)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<BlogCategory> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public BlogCategory GetById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string GetByName(string name)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(BlogCategory _object)
-        {
-            throw new NotImplementedException();
+            _db.BlogCategories.Update(obj);
         }
     }
 }

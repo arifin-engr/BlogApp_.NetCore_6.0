@@ -1,5 +1,6 @@
-using BlogApp.BLL.Services;
 using BlogApp.DAL.Data;
+using BlogApp.DAL.Repositories;
+using BlogApp.DAL.Repositories.IRepository;
 using BlogApp.Model;
 using BlogApp.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,13 +12,14 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddTransient<DbInitializer>();
-builder.Services.AddControllers();
-
 // For Entity Framework  
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("con")));
 
+//Unit Of Work
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddTransient<IDbInitializer, DbInitializer>();
+builder.Services.AddControllers();
 // For Identity  
 builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -79,7 +81,7 @@ void SeedData(IHost app)
     var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
     using (var scope = scopedFactory.CreateScope())
     {
-        var service = scope.ServiceProvider.GetService<DbInitializer>();
+        var service = scope.ServiceProvider.GetService<IDbInitializer>();
         service.seed();
     }
 }
@@ -88,6 +90,7 @@ void SeedData(IHost app)
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }

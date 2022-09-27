@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using BlogApp.BLL.interfaces;
+﻿
 using BlogApp.DAL.Data;
 using BlogApp.Model;
 using BlogApp.Models;

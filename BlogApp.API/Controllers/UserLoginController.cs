@@ -27,11 +27,6 @@ namespace BlogApp.API.Controllers
             _configuration = configuration;
         }
 
-        [HttpGet]
-        public IEnumerable<AppUser> GetAll()
-        {
-            return _db.Users.ToList();
-        }
 
         [HttpGet]
         [Route("{name}")]

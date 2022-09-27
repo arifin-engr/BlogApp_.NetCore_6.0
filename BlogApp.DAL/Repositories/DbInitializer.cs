@@ -1,4 +1,5 @@
-﻿using BlogApp.DAL.Contacts;
+﻿using BlogApp.DAL.Data;
+using BlogApp.DAL.Repositories.IRepository;
 using BlogApp.Model;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlogApp.DAL.Data
+namespace BlogApp.DAL.Repositories
 {
     public class DbInitializer : IDbInitializer
     {
@@ -44,7 +45,7 @@ namespace BlogApp.DAL.Data
             _email.Trim();
 
 
-            var FindUser = _db.Users.FirstOrDefaultAsync(u => u.UserName == _userName).Result;
+           var FindUser = _db.Users.FirstOrDefaultAsync(u => u.UserName == _userName).Result;
 
 
             //IdentityResult result;
@@ -52,26 +53,26 @@ namespace BlogApp.DAL.Data
             if (FindUser == null)
             {
 
-                AppUser appUser = new AppUser();
-                appUser.UserName = _userName;
-                appUser.Email = _email;
+              AppUser appUser = new AppUser();
+               appUser.UserName = _userName;
+                 appUser.Email = _email;
                 appUser.EmailConfirmed = false;
-                appUser.Country = _country;
+               appUser.Country = _country;
 
-                //_userManager = new UserManager<AppUser>();
-                IdentityResult result = _userManager.CreateAsync(appUser, _password).Result;
+            //    //_userManager = new UserManager<AppUser>();
+               IdentityResult result = _userManager.CreateAsync(appUser, _password).Result;
 
                 if (result.Succeeded)
                 {
-                   // AppUser user = await _db.Users.FirstOrDefaultAsync(u => u.UserName == _userName);
+                    // AppUser user = await _db.Users.FirstOrDefaultAsync(u => u.UserName == _userName);
 
 
-                    // Adding Manager role 
-                    IdentityResult DefultRoleresult = _userManager.AddToRoleAsync(appUser, role).Result;
+            //        // Adding Manager role 
+               IdentityResult DefultRoleresult = _userManager.AddToRoleAsync(appUser, role).Result;
 
-                    if (DefultRoleresult.Succeeded)
-                    {
-                        _db.SaveChanges();
+                  if (DefultRoleresult.Succeeded)
+                   {
+                       _db.SaveChanges();
                     }
                 }
             }

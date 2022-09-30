@@ -2,7 +2,6 @@ using BlogApp.DAL.Data;
 using BlogApp.DAL.Repositories;
 using BlogApp.DAL.Repositories.IRepository;
 using BlogApp.Model;
-using BlogApp.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;

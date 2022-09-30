@@ -1,7 +1,7 @@
 ﻿
 using BlogApp.DAL.Data;
 using BlogApp.Model;
-using BlogApp.Models;
+using BlogApp.Model.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +26,7 @@ namespace BlogApp.API.Controllers
         //Register
         [HttpPost]
         [Route("register")]
-        public async Task< HttpResponseMessage> RegisterUser([FromBody] UserRegisterModel userRegistration)
+        public async Task< HttpResponseMessage> RegisterUser([FromBody] UserRegistrationVM userRegistration)
         {
             string name = userRegistration.UserName; ;
             var ExistUserName= await _userManager.FindByNameAsync(name);

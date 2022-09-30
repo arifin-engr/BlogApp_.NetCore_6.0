@@ -36,7 +36,7 @@ namespace BlogApp.DAL.Migrations
 
                     b.HasKey("UserImageId");
 
-                    b.ToTable("AppUserImages");
+                    b.ToTable("AppUserImages", (string)null);
                 });
 
             modelBuilder.Entity("BlogApp.Model.AppUserImageDetail", b =>
@@ -72,7 +72,7 @@ namespace BlogApp.DAL.Migrations
 
                     b.HasKey("BlogCategoryId");
 
-                    b.ToTable("BlogCategories");
+                    b.ToTable("BlogCategories", (string)null);
                 });
 
             modelBuilder.Entity("BlogApp.Model.BlogImage", b =>
@@ -89,7 +89,7 @@ namespace BlogApp.DAL.Migrations
 
                     b.HasKey("BlogImageId");
 
-                    b.ToTable("BlogImages");
+                    b.ToTable("BlogImages", (string)null);
                 });
 
             modelBuilder.Entity("BlogApp.Model.BlogImageDetail", b =>
@@ -136,7 +136,7 @@ namespace BlogApp.DAL.Migrations
 
                     b.HasIndex("BlogImageId");
 
-                    b.ToTable("BlogPosts");
+                    b.ToTable("BlogPosts", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

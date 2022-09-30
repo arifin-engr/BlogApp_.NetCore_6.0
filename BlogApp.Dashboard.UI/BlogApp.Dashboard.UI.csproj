@@ -7,10 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BlogApp.API\BlogApp.API.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="wwwroot\CustomTheme\" />
     <Folder Include="wwwroot\dir\Logo\" />
     <Folder Include="wwwroot\lib\qqqqqqqqqqqqq\" />

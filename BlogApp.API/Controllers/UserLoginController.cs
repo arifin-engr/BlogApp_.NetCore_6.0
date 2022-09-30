@@ -1,5 +1,6 @@
 ﻿using BlogApp.DAL.Data;
 using BlogApp.Model;
+using BlogApp.Model.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +44,7 @@ namespace BlogApp.API.Controllers
 
         [HttpPost]
        // [Route("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginModel model)
+        public async Task<IActionResult> Login([FromBody] UserLoginVM model)
         {
             var user = await userManager.FindByNameAsync(model.UserName);
             if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
